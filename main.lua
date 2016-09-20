@@ -17,7 +17,9 @@ function sort_test(algorithm)
    instance:sort()
    local t2 = os.clock()
    if instance:check() then
-      print(algorithm:name() .. ": " .. t2-t1 .. "[ms]")
+      str_name = string.format("%-10s", algorithm:name())
+      str_time = string.format("%10.2f[ms]", (t2-t1)*1000)
+      print(str_name .. ": " .. str_time)
    else
       print(algorithm:name() .. ": failure")
    end
